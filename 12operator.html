@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //다른건 다 알겠고 특이한 것만 살펴보자.
+    var x = 3; //대입이 아니라 3을 x가 참조(3을 박스에 넣고 그 박스 이름을 x라 붙인다..?)
+    var y = 3;
+    //그래서 비교연산도 2가지 종류가 있다고 한다. 값이 같은지 / 같은 객체인지
+    //콘솔 말고 document객체를 이용해 페이지에 출력해보자.
+    document.writeln(x==y); //값 비교 true
+    document.writeln("이거 좀 이상하네");
+    document.writeln(x===y); //주소 비교. 같은 값을 가진 리터럴은 1개만 생기고 공유되기 때문에 true
+
+    //그럼 주소를 다르게 하고 싶다면? number객체로 생성
+    var x1 = 3;
+    var x2 = new Number(3);
+    document.writeln(x1==x2); //true.. 이게 왜 true지?
+    document.writeln(x1===x2); //false
+
+    var x3 = new Number(3);
+    var x4 = new Number(3);
+    document.writeln(x3==x4); //false
+    document.writeln(x3===x4); //false
+
+    //이건 결과가 어떻게 될까?
+    document.writeln(3.5-"2"); //1.5  예외다 예외. 실수 - 숫자문자열 =  실수로 변환되어 계산됨.
+    document.writeln(3-"2"); //1 예외다 예외. 정수 - 숫자문자열 =  정수로 변환되어 계산됨.
+    document.writeln(5 < 3+4); //true
+    document.writeln("32" > "4"); //false
+    document.writeln(32 > "4"); //true
+    //문자열로 변환되어서 연산되어서 이런 결과가 나오는건가?
+
+    console.log(1+"2");//12
+    console.log(1-"2");//-1
+    console.log(1<"2");//true
+
+</script>
+<body>
+    
+</body>
+</html>

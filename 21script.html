@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //자바스크립트를 위한 입/출력 객체
+    //문서 객체의 속성 사용하기.
+    function printResult(){
+        var btnPrint = document.getElementById("btn-print");
+
+        var x = prompt("x 값 입력", 0);
+        var y = prompt("y 값 입력", 0);
+
+        x = parseInt(x);
+        y = parseInt(y);
+
+        document.writeln(x+y);
+    }
+    //이거 id값 적용할 때 생성시점때문에 제대로 실행이 안 됐었다.(id태그 밑으로 script태그를 옮겼을 때 실행됐었다.) 이것을 window.onload로 해결할 것이다.
+    //얘는 페이지 로드되자마자 실행되는 것이 아니라 내가 action을 취했을 때 실행되어야 하니 생성시점땜에 오류가 났었어.
+    //btnPrint.onclick = printResult;
+
+    function init(){
+        //여러번 쓴다고 전역변수로 빼지말래. 충돌날 수도 있다고.
+        // var btnPrint = document.getElementById("btn-print");
+        btnPrint.onclick = printResult;
+    }
+    //이건 html코드까지 다 읽고 window load가 완료되었을 때 함수를 호출하게 한 것. 이런식으로 해결
+    //window객체는 페이지 실행되자마자 생성된다. 그래서 얘한테 로드가 완료됐을 때 함수를 실행하라고 명령한 것.
+    window.onload = init; 
+</script>
+<body>
+    <input type="button" value="눌러보세욤" id="btnPrint" />
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //스크립트는 페이지가 읽혀질 때 실행
+
+    //이 함수는 호출되면 실행이 될 것이여.
+    function printResult(){
+        var x, y;
+        x = prompt("x값 입력", 0);
+        y = prompt("y값 입력", 0);
+        x = parseInt(x);
+        y = parseInt(y);
+        alert(x+y);
+    }
+</script>
+<body>
+    <!-- 또다른 스크립트 코드 영역 -->
+    <!-- 이벤트가 발생할 때 실행 -->
+    <input onclick=" " />
+    <input onmouseover=" " />
+    <input type="button" value="눌러보자" onclick="alert('야호')" /><br />
+    <span onclick="alert('눌러보셈');">눌러보셈</span>
+
+    <!-- 이전에 만들었던 예제를 응용해보자.-->
+    <!--겁나게 불편하구먼-->
+    <input type="button" value="x+y값 계산기" onclick="var x, y; x=prompt('x값 입력'); y=prompt('y값 입력'); alert(x+y);" /> 
+    <input type="button" value="x+y값 계산기(함수)" onclick=printResult(); />
+    <!--스크립트에 함수로 정의하고 써보자.-->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //---자바스크립트와 다른 언어들의 엄청난 차이점---
+    //자바,C,C++ 등의 프로그래밍 언어들은 정의를 먼저 내리고 객체를 생성한다.(class) 
+    //자바스크립트는 객체를 생성하고 정의한다.(prototype, class) 맨땅에 객체를 생성한다니 우하하
+    //그래서 자바같은 것들을 정적 객체 정의라 하고 자바스크립트같은 것들을 동적 객체 정의라고 한다는군.
+
+    //Object객체 생성하기
+    //키를 기반으로 데이터 저장해야 할 때 여러가지 방법들. 방법이 여러가지라 언제 어떤 방법을 사용할지 생각해보자.
+
+    //1번(기본값. 값을 뽑아내야 하는 경우 아니면 기본적으로 이렇게 씀.)
+    var exam = new Object(); //맨땅에 객체를 하나 생성합니다. 슈벌 객체부터 만드네 ㅋㅋ 
+    exam.kor = 30; //객체부터 생성하고 속성을 만드네ㅋㅋ 
+    exam.eng = 70;
+    exam.math = 80;
+    console.log(exam);
+    console.log("exam.kor+exam.eng = "+ (exam.kor+exam.eng)); //연산도 됨 ㄷㄷ
+    //자바스크립트 조심해야되는게, 내 의도랑 다르게 오타를 냈는데도 에러가 안난단말이야? 새 속성 만드는 걸로 인식을 해버리자너..
+    //유연함이 주는 단점이야. 골때려. 조심해야돼.
+    //그래서 컴파일언어는 정의를 먼저하고 속성을 쓰기 때문에 정의한 것에 맞지 않으면 컴파일에러를 내줘서 오류를 거르기가 상대적으로 쉽지.
+    exam.Kor = 20; //ㅋㅋ; 대문자 당황스럽네..
+
+    var friend = new Object();
+    friend.친구1 = "김석희";
+    friend.친구2 = "최원종";
+    friend.친구3 = "권영후";
+    console.log(friend.친구1); //김석희
+    console.log(friend.친구2); //최원종
+    console.log(friend.친구3); //권영후
+    console.log(friend); //친구1: "김석희", 친구2: "최원종", 친구3: "권영후"
+
+    //2번(변수를 이용해 값을 꺼낼때나 대입할 때 이방식을 사용해야만 해. exam2.kor=30; 이방식으론 불가능함.)
+    var exam2 = new Object();
+    exam2["kor"]=30; //key값은 문자열로 적어줘야 하는군.
+    exam2["eng"]=70;
+    exam2["math"]=80;
+    console.log(exam2); //kor: 30, eng: 70, math: 80
+    //값을 뽑아보자.
+    var valueTest = "eng"; //key값을 변수에 담아서 쓸 수 있구나.
+    console.log("값뽑기" + exam[valueTest]); //key에 해당하는 value가 나오는군. 70
+
+    //나 혼자 key값을 변수에 담아서 value출력해는 연습
+    var exam3 = new Object();
+    exam3["1"]=10;
+    exam3["바보"]=20;
+    console.log(exam3);
+    var a = "1";
+    var b = "바보";
+    console.log(exam3[a]); //10 key에 해당하는 value 잘 나옴
+    console.log(exam3[b]); //20
+
+    //3번(이렇게 바로 만들어도 간단하구만? 근데 대용량은 못하겠네.)
+    var exam1 = {"kor":30, "eng":70, "math":80}; //이거 JSON 표기법이었구나. var a = {};
+    console.log(exam1); //kor: 30, eng: 70, math: 80
+
+
+    //Map을 다룰땐, 키값(해시값)을 이용해서 데이터를 관리할 필요가 있다? Object~!
+    //선형적으로 순서로 데이터를 관리하고 싶다? Array~!
+
+    
+    
+</script>
+<body>
+    
+</body>
+</html>

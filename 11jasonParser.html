@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //오 이전 강의에서는 Object의 key부분을 다 문자열로 입력했었는데 굳이 큰 따옴표 넣지 않아도 문자열로 인식해서 출력할 때 문제가 없다고 한다.
+    var data = {id:"terranboy", title:"aaa"}; 
+    console.log(data); //id: "terranboy", title:"aaa"
+    console.log(data.id); //terranboy
+
+    //근데 컬럼명에 띄어쓰기한다거나 유효하지 않은 이름을 쓰면 따옴표로 문자열로 만들어줘야 한다.
+    var data1 = {"n id":"terranboy", title:"aaa"};
+    console.log(data1["n id"]);
+
+    //json을 파싱하면 이렇게 문자열로 가져오게 되는데 데이터를 다루기 위해 JSON.parse()를 이용한다.
+    // var data2 = JSON.parse('{id:1, title:"aaa"}');
+    // console.log(data2.title); //어..? 에러가 나잖아? 에러나서 주석처리함.ㅠ.ㅠ.. 왜 에러가날까? 그것은 아래에...
+    //json parser는 문법규칙을 까탈스럽게 확인한다. 그래서 key값을 문자열로 입력해주지 않으면 에러를 발생시킨다.
+    var data3 = JSON.parse('{"id":1, "title":"aaa"}');
+    console.log(data3.title); //aaa 잘 출력 됩니다 하하하
+
+    //그럼 이렇게 우리가 이렇게 쓴 코드를 JSON으로 바꾸려면 어떻게 해야할까? (우리도 JSON파일 업로드 할 때가 있을거아녀?ㅋ)
+    var data4 = {id:2, title:"bbb"};
+    //JSON.stringify()를 이용하고 그걸 변수에 담아서 쓰면 됩니다~!
+    //자, 이게 뭐라고? JSON파일(데이터를 문자열로)로 바꾼다~!
+    var json = JSON.stringify(data4);
+    console.log(typeof json); //string
+    alert(json); //잘 보면 꼼꼼하게 잘 변환해주었다..ㅋㅋ
+
+    //참고로 Ajax 배울때 JSON형태의 문자열을 많이 받을 것이다.
+
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //window객체에 대해 알아보자
+    /*
+    window
+    window.location 페이지 이동
+    window.history 이전페이지로 이동
+    window.document 이미지든 스타일이든 스크립트 언어로 바꿀 수 있음. 각종 태그 객체들.
+    */
+
+    //그거 아늬? alert썼던 거. 사실 앞에 window. 생략된거야.
+    var a = 3;
+    window.alert(a); //생략가능.
+    
+    var x, y;
+    x = prompt("x값 입력",0); // 뒤의 0은 기본값
+    y = prompt("y값 입력",0);
+    document.writeln(typeof x); //string
+    document.writeln(x+y); //x와 y가 각각 문자열임ㅋㅋ
+
+    //그럼 숫자로 변환해볼까? parseInt
+    x = parseInt(x);
+    y = parseInt(y);
+    document.writeln(typeof x); //number
+    document.writeln(x+y);
+
+    document.writeln(parseInt("abc")); //NaN. 에러가 아니라 Not a Number를 반환.
+    document.writeln(parseInt("12abc5")); // 12★ 숫자로 시작하고 뒤에 문자가 오면 자동으로 subString해줌. 이거 알고 있으면 짜를 필요가 없음.
+
+    var answer;
+    answer = confirm("정말 삭제할래?"); // confirm은 yes or no 가능
+    if(answer){
+        alert("ㅇㅋ 삭제완료");
+    } else {
+        alert("ㅇㅋ 삭제안함");
+    }
+
+</script>
+<body>
+    
+</body>
+</html>

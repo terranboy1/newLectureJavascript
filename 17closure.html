@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //자바스크립트는 함수를 정의하지 않고 함수를 객체로 만든다.
+    //그래서 그 객체를 반환할 수 있다.
+    //또 함수가 함수 안에서 사용될 수 있다.
+    //그러다보면 '클로저'라는 문제를 낳게 되는데...
+
+    //기본예제
+    function f1(){
+        var a = 1; //생명주기가 이 함수 안임. 밖에선 못 씀
+
+        return a;
+    }
+    var a = f1();
+    document.writeln(a);
+
+    //그럼 본격적으로 다음 예를 볼까?
+    function f2(){
+        var a = 100;
+
+        return function f3(){ //아니, 반환의 결과가 함수객체네?
+            return a; //위에 있는 값을 반환하네? (전역객체니까 위의 것들을 다 사용할 수 있어.)
+        }
+    }
+    var f = f2(); //변수 f가 함수를 받는다. f2는 호출이 끝나고 모든 자원을 해제해야 한다. 근데 f3()에서 사용을 해야돼. 생명주기가 꼬였어. f1()함수는 자원해제되지 못하고 끝까지 살아남아..
+    var g = f(); //근데 요 형태가 굉장히 어색하네.
+    document.writeln(g);
+
+    //function f3(){return a;} 얘가 끝나야만 f2()함수가 자원해제될 수 있다. 그래서 여기서 f3()함수를 클로저라고 한다. 자원해제시켜주는 함수..ㅋㅋ
+
+
+
+</script>
+<body>
+    
+</body>
+</html>

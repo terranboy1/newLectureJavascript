@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //var선언 변수는 정적 방식으로 생성
+    var a = 1;
+    alert(a);
+
+    alert(b); //undefined(변수 선언은 이미 됐다는 것. 값이 할당 안됐을 뿐.)
+    var b = 1;
+
+    c = 10; //전역객체. 선언하지 않고 대입하면 전역객체의 속성으로 붙는다. window.c = 10; 이렇게.
+    alert(c);
+
+    // alert(d); 에러난다. 사전에 a라는 변수가 인식이 되지 않았기 때문이다(전역객체는 대입될 때 선언된다.위의 undefined랑은 다른 것이지.)
+    d = 20;
+
+    var f1 = function(){
+        a = 499; //window.a = 1; 전역객체는 어디서든 쓸 수 있다.
+
+        a++;
+        alert(a);
+    }
+    f1(); // 500
+
+    var f2 = function(){
+        a = 499; //window.a = 1; 전역객체는 어디서든 쓸 수 있다.
+        var a = 999;
+
+        a++;
+        alert(a);
+    }
+    f2(); // 함수 내에 전역변수, 지역변수가 동시에 있는데 a++하면 어떻게될까? 우선순위가 어떻게 될까?
+          //1. 지역변수 2. 전역변수 순으로 적용된다.
+
+
+    //자바스크립트는 참 특이하다. 다른 언어는 변수 선언을 중복으로 하면 에러가 나는데 자바스크립트는 에러가 안나.
+    var a = 10;
+    var a = 20;
+    alert(a);
+
+    //자바스크립트엔 지역변수 개념이 없고 오로지 함수 안에서만 지역변수로서 인식된다.
+    function f3(){
+        var e = 247;
+        f = 4423;
+        document.writeln(e);
+    }
+    f3();
+    //alert(e); 에러 발생. 지역변수라 함수 안에껀 직접 사용 못해.
+    document.writeln(f); //근데 이건 돼. 전역객체니까 어디 있건 다 사용 가능.
+
+    function f4(){
+        var g = 1;
+        f5();
+        function f5(){
+            var h = 2;
+            f6();
+            function f6(){
+                var i = 3;
+            }
+        }
+    }
+
+    f4();
+    document.writeln(g);
+
+
+
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>

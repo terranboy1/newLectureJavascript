@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .img {
+            width:300px;
+            height:200px;
+        }
+    </style>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="javascript-dom.js"></script>
+</head>
+<body>
+    <section id="section8">
+        <h1>Ex8-노드 삽입과 바꾸기</h1>            
+        <div>                
+            <input type="button" class="up-button" value="위로" />                
+            <input type="button" class="down-button" value="아래로" />
+        </div>
+        <table border="1" class="notice-list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>작성자</td>
+                    <td>조회수</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: lightblue;">
+                    <td>1</td>
+                    <td><a href="1">자바스크립트란..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2">유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+                <tr>                        
+                    <td>3</td>
+                    <td><a href="3">기본기가 튼튼해야....</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4">근데 조회수가 ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <hr />
+
+    <section id="section7">
+        <h1>Ex7-노드 복제와 템플릿 태그</h1>
+        <div>
+            <input type="button" class="clone-button" value="복제" />
+            <input type="button" class="template-button" value="템플릿 복제" />
+        </div>
+        <template>
+            <tr>
+                    <td></td>
+                    <td><a href="">테스트(템플릿이라 안나옴)</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+        </template>
+        <table border="1" class="notice-list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>작성자</td>
+                    <td>조회수</td>
+                </tr>
+            </thead>
+            <tbody> 
+                <!-- <tr>
+                    <td>1</td>
+                    <td><a href="1">자바스크립트란..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2">유투브에 끌려다니지 않으려 했는데...</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="3">기본기가 튼튼해야....</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4">근데 조회수가 ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </section>
+
+
+    <section id="section6">
+        <h1>Ex6-노드조작: 메뉴추가(createTextNode, Element)</h1>
+        <div>
+            <input class="title-input" name="title" /> <!--여기에 어떤 문자열을 입력한다.-->
+            <input type="button" class="add-button" value ="추가"> <!--추가버튼-->
+            <input type="button" class="del-button" value ="취소"> <!--취소버튼-->
+        </div>
+        <ul class="menu-list">
+            <li><a href="">aaa</a></li>
+            <li><a href="">bbb</a></li>
+
+        </ul>
+    </section>
+        
+    <section id="section5">
+        <h1>Ex5 : 엘리먼트 노드의 속성 && CSS 속성 변경</h1>
+        <div class="box">
+            <!--사용자가 이미지 이름을 입력하고 변경하기 버튼 누르면 입력한 이미지가 뜨게 할 예정-->
+            <input class="src-input" list="img-list" />
+            <!--입력값을 텍스트박스 말고 다른걸로 바꿔보자.-->
+            <!-- <datalist id="img-list">
+                <option value="img1.jpg">이미지1</option>
+                <option value="img2.jpg">이미지2</option>
+                <option value="img3.jpg">이미지3</option>
+            </datalist> -->
+            <select class="img-select">
+                <option value="img1.jpg">이미지1</option>
+                <option value="img2.jpg">이미지2</option>
+                <option value="img3.jpg">이미지3</option>
+            </select>
+            <input type="color" class="color-input" />
+            <input class="change-button" type="button" value="변경하기" />
+        </div>
+        <div>
+            <img class="img" src="images/img1.jpg" style="border:1px solid red;" />
+        </div>
+    </section>
+    <hr />    
+
+    <section id="section4">
+            <h1>Ex4 : childNodes를 이용한 노드 선택</h1>
+            <!-- <div class="box"><input /><input /> 엔터치면 제대로 동작을 안하는데, 공백문자열도 텍스트로 인식이 되어서 노드가 꼬인 것이다. 이렇게 붙여써줘야함. 공백도 텍스트라 노드다! -->
+            <div class="box">
+                <input />
+                <input />
+            </div>
+        </section>
+        <hr />
+
+    <section id="section3">
+        <h1>Ex3 : Selectors API Level1</h1>
+        <div>
+            <!-- name은 값을 전달할 때 쓰는 key값. name값으로 검색한다.-->
+            <input name="x" type="text" value="0" dir="rtl" />
+            +
+            <input class="txt-y" type="text" value="0" dir="rtl" />
+            <input class="btn-add" type="button" value="=" />
+            <input class="txt-sum" type="text" value="0" readonly dir="rtl" />
+        </div>
+    </section>
+    <hr />
+
+    <section id="section2">
+        <h1>Ex2 : 엘리먼트 선택방법 개선하기</h1>
+        <div>
+            <input class="txt-x" type="text" value="0" dir="rtl" />
+            +
+            <input class="txt-y" type="text" value="0" dir="rtl" />
+            <input class="btn-add" type="button" value="=" />
+            <input class="txt-sum" type="text" value="0" readonly dir="rtl" />
+        </div>
+    </section>
+    <hr />
+
+    <section>
+        <h1>Ex1 : 계산기 프로그램</h1>
+        <div>
+            <input id="txt-x" type="text" value="0" dir="rtl" />
+            +
+            <input id="txt-y" type="text" value="0" dir="rtl" />
+            <input id="btn-add" type="button" value="=" />
+            <input id="txt-sum" type="text" value="0" readonly dir="rtl" />
+        </div>
+    </section>
+    <hr />
+</body>
+</html>

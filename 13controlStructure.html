@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    var arr = ["철수","영희","맹구","동천"];
+    var obj = {id:1, title:"hello", writeId:"newlec"};
+
+    for(var i=0; i<arr.length; i++)
+    document.write(arr[i]+"<br />");
+
+    //향상된 for문이 자바스크립트에선 이렇게 쓰는구먼.
+    //근데 차이가 있는데 임시변수 tmp에 값이 담기는 게 아니고 인덱스!!!가 담기네.그래서 arr[tmp] 이런식으로 써줘야하는 게 차이야.
+    for(var tmp in arr)
+    alert(arr[tmp]); //왜 굳이 이렇게 했을까? --> 범용적으로 사용하기 위해서라고 한다.
+
+    for(var tmp in obj) //키값을 읽어낸다.
+    document.write(obj[tmp] + "<br />");
+
+    //정리: for in문은 값이 아니라 키값을 순회하는 제어구조다.
+
+</script>
+<body>
+    
+</body>
+</html>

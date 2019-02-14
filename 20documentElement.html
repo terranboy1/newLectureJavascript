@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<script>
+    //자바스크립트를 위한 입/출력 객체
+    //문서 객체의 속성 사용하기
+    function printResult(){
+        var x, y;
+        x = prompt("x 값 입력", 0);
+        y = prompt("y 값 입력", 0);
+
+        x = parseInt(x);
+        y = parseInt(y);
+        // document.write("x+y=");
+        // document.writeln(x+y);
+
+        //input 노드에 id를 부여했기 때문에 이 id로 노드객체를 다룰 수 있다. 그 예시.
+        btnPrint.value=x+y; //오홍 prompt로 입력해서 나온 결과값을 호출한 태그의 value값으로 해버렸네. 즉, 버튼의 이름이 바뀌어버린거잖어.ㅋㅋ
+        span1.innerText = x+y; //span1은 value속성이 없이 텍스트로 글씨가 써져있어서 이거 바꾸려면 innerText속성 이용해야댐.
+        // btnPrint.type="text"; //신기ㅋㅋ
+    }
+    //얘는 input코드를 읽어야만 실행이 된다. 그래서 undefined오류가 뜸.
+    btnPrint.onclick = printResult; //소괄호를 쓰면 함수 호출이고, 소괄호 빼야 함수 대입이다.
+</script>
+<body>
+    <!-- html 요소들을 객체화하는 로드 과정이 포함됨-->
+    <!-- 태그들은 메모리에서 다 노드객체로 인식이 된다.-->
+    <!-- id. 노드에 이름을 붙이고 이름으로 접근. 해당 id를 이용해 객체에 접근할 수 있다.-->
+    <input type="button" value="눌러보세욤" id="btnPrint" />
+    <span id="span1" onclick="printResult();">눌러보세욤.</span>
+
+    <!--근데 위에서처럼 onclick 일일이 적어주면 html코드 지저분해지잖아. onclick도 스크립트쪽으로 올려보자.-->
+</body>
+</html>
